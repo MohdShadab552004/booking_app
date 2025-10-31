@@ -1,11 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
 // Routes
 const experienceRoutes = require('./routes/experience.routes');
 const bookingRoutes = require('./routes/booking.routes');
+const { connectDB } = require('./config/db.config');
 
 // Load env vars
 dotenv.config();
@@ -34,15 +34,7 @@ app.use((err, req, res, next) => {
 });
 
 // Connect to MongoDB
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/booking_app');
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.error('Error connecting to MongoDB:', error);
-    process.exit(1);
-  }
-};
+connectDB()
 
 // Start server
 const PORT = process.env.PORT || 5000;

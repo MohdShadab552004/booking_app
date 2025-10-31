@@ -6,6 +6,7 @@ import ContactForm from "../components/checkout/ContactForm";
 import PromoForm from "../components/checkout/PromoForm";
 import AgreementCheckbox from "../components/checkout/AgreementCheckbox";
 import SummaryCard from "../components/checkout/SummaryCard";
+import BackHeader from "../components/common/BackHeader";
 
 const TAX_RATE = 0.06;
 
@@ -60,10 +61,11 @@ export default function Checkout() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="max-w-7xl mx-auto px-2">
+      <BackHeader title="Checkout"/>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         {/* LEFT: Form (spans 2 columns on lg) */}
-        <div className="lg:col-span-2 bg-gray-100 rounded-xl p-6">
+        <div className="lg:col-span-2 bg-[#EFEFEF] rounded-xl px-6 py-5">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -84,11 +86,6 @@ export default function Checkout() {
               validatePromo={validatePromo}
               subtotal={subtotal}
             />
-
-            {error && (
-              <p className="text-sm text-red-600">{error}</p>
-            )}
-
             <AgreementCheckbox agreed={agreed} setAgreed={setAgreed} />
           </form>
         </div>

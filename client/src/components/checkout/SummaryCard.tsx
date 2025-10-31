@@ -27,25 +27,25 @@ function formatINR(n: number) {
 
 const SummaryCard = ({ bookingInfo, subtotal, discountAmount, taxes, total, loading, handleConfirm, fullName, email, agreed }: Props) => {
   return (
-    <aside className="w-full bg-white rounded-xl p-6 border shadow-sm">
+    <aside className="w-full h-fit bg-[#EFEFEF] rounded-xl p-5 flex flex-col gap-4">
       <div className="space-y-4">
         <div className="flex justify-between text-sm text-gray-600">
-          <div>Experience</div>
+          <div className="text-[16px]">Experience</div>
           <div className="font-medium text-gray-900">{bookingInfo.experience}</div>
         </div>
 
         <div className="flex justify-between text-sm text-gray-600">
-          <div>Date</div>
+          <div className="text-[16px]">Date</div>
           <div className="font-medium text-gray-900">{bookingInfo.date}</div>
         </div>
 
         <div className="flex justify-between text-sm text-gray-600">
-          <div>Time</div>
+          <div className="text-[16px]">Time</div>
           <div className="font-medium text-gray-900">{bookingInfo.time}</div>
         </div>
 
         <div className="flex justify-between text-sm text-gray-600 items-center">
-          <div>Qty</div>
+          <div className="text-[16px]">Qty</div>
           <div className="flex items-center gap-2">
             <span>{bookingInfo.quantity}</span>
           </div>
@@ -66,7 +66,7 @@ const SummaryCard = ({ bookingInfo, subtotal, discountAmount, taxes, total, load
           <div className="font-medium">{formatINR(taxes)}</div>
         </div>
 
-        <hr className="my-2 border-gray-200" />
+        <hr className="my-2 border-[#656565]" />
 
         <div className="flex justify-between items-center">
           <div className="text-base font-semibold">Total</div>

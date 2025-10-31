@@ -8,7 +8,6 @@ const { validateAndApplyPromo } = require('../utils/helper');
 exports.createBooking = async (req, res) => {
   try {
     const errors = validationResult(req);
-    console.log("error checking 12")
     if (!errors.isEmpty()) {
       return res.status(400).json({
         success: false,

@@ -20,7 +20,6 @@ const PromoForm = ({
   setPromo,
   appliedPromo,
   setAppliedPromo,
-  discountAmount,
   setDiscountAmount,
   promoMessage,
   setPromoMessage,
@@ -56,26 +55,28 @@ const PromoForm = ({
   };
 
   return (
-    <div className="flex items-start gap-4">
-      <div className="flex-1">
-        <label className="flex flex-col">
-          <span className="text-sm text-gray-600 mb-2">Promo code</span>
-          <input
-            value={promo}
-            onChange={(e) => setPromo(e.target.value)}
-            placeholder="Enter promo"
-            className="w-full rounded-md px-3 py-3 bg-white border border-gray-200 focus:outline-none"
-            disabled={!!appliedPromo}
-          />
-        </label>
-      </div>
+    <>
+      <div className="flex items-end gap-4 max-[500px]:flex-col">
+        {/* Input Field */}
+        <div className="flex-1 w-full">
+          <label className="flex flex-col">
+            <span className="text-sm text-gray-600 mb-2">Promo code</span>
+            <input
+              value={promo}
+              onChange={(e) => setPromo(e.target.value)}
+              placeholder="Enter promo"
+              className="w-full py-3 px-4 bg-[#DDDDDD] rounded-md text-sm outline-none"
+              disabled={!!appliedPromo}
+            />
+          </label>
+        </div>
 
-      <div className="pt-6">
+        {/* Apply / Remove Button */}
         {!appliedPromo ? (
           <button
             type="button"
             onClick={applyPromo}
-            className="px-3 py-2 bg-black text-white rounded-md text-sm font-medium hover:opacity-90 transition"
+            className="px-5 py-3 bg-black text-white rounded-md text-sm font-medium hover:opacity-90 transition max-[500px]:w-full"
           >
             Apply
           </button>
@@ -83,17 +84,24 @@ const PromoForm = ({
           <button
             type="button"
             onClick={removePromo}
-            className="px-3 py-2 bg-gray-200 text-gray-800 rounded-md text-sm font-medium hover:bg-gray-300 transition"
+            className="px-5 py-3 bg-gray-200 text-gray-800 rounded-md text-sm font-medium hover:bg-gray-300 transition max-[500px]:w-full"
           >
             Remove
           </button>
         )}
       </div>
 
+      {/* Promo message */}
       {promoMessage && (
-        <p className={`text-sm ${appliedPromo ? 'text-green-600' : 'text-red-600'}`}>{promoMessage}</p>
+        <p
+          className={`text-sm mt-2 ${
+            appliedPromo ? 'text-green-600' : 'text-red-600'
+          }`}
+        >
+          {promoMessage}
+        </p>
       )}
-    </div>
+    </>
   );
 };
 

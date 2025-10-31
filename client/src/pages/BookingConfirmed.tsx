@@ -11,7 +11,7 @@ const BookingConfirmed = () => {
   const refId = bookingReference || (bookingId ? `HUF${bookingId.slice(-6).toUpperCase()}` : "HUF" + Math.random().toString(36).substring(2, 6).toUpperCase());
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-50">
+    <div className="flex flex-col items-center justify-start pt-20 h-[calc(100dvh-76px)] ">
       {/* Success Icon */}
       <div className="bg-green-500 text-white p-4 rounded-full mb-4">
         <CheckCircle size={40} />

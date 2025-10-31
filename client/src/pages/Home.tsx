@@ -1,4 +1,4 @@
-import ExperienceCard from "../components/cards/ExperienceCard";
+import ExperienceCard from "../components/experience/ExperienceCard.tsx";
 import { useExperiences } from "../hooks/useExperiences";
 import Loading from "../components/ui/Loading.tsx"
 

@@ -30,20 +30,6 @@ const BookingCard = ({ basePrice, quantity, selectedDate, selectedTimeSlot, onCo
 
       <QuantityPicker quantity={quantity} setQuantity={setQuantity} />
 
-      {selectedDate && (
-        <div className="flex justify-between text-sm">
-          <p className="text-[#656565]">Date</p>
-          <p className="font-medium">{selectedDate}</p>
-        </div>
-      )}
-
-      {selectedTimeSlot && (
-        <div className="flex justify-between text-sm">
-          <p className="text-[#656565]">Time</p>
-          <p className="font-medium">{selectedTimeSlot.time}</p>
-        </div>
-      )}
-
       <div className="flex justify-between">
         <p className="text-[#656565]">Subtotal</p>
         <p>₹{basePrice * quantity}</p>
@@ -52,8 +38,10 @@ const BookingCard = ({ basePrice, quantity, selectedDate, selectedTimeSlot, onCo
         <p className="text-[#656565]">Taxes</p>
         <p>₹{tax}</p>
       </div>
+      
+      {/* line */}
+      <div className="w-full h-px bg-[#656565]" />
 
-      <hr />
 
       <div className="flex justify-between font-semibold text-lg">
         <p className="">Total</p>

@@ -15,7 +15,7 @@ const ContactForm = ({ fullName, setFullName, email, setEmail }: Props) => {
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             placeholder="Your name"
-            className="w-full rounded-md px-3 py-3 bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="className='w-full py-3 px-4 bg-[#DDDDDD] rounded-md"
             required
           />
         </label>
@@ -27,7 +27,7 @@ const ContactForm = ({ fullName, setFullName, email, setEmail }: Props) => {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email"
             type="email"
-            className="w-full rounded-md px-3 py-3 bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+            className="className='w-full py-3 px-4 bg-[#DDDDDD] rounded-md"
             required
           />
         </label>

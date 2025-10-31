@@ -5,6 +5,7 @@ import { useExperience } from "../hooks/useExperiences";
 import DateSelector from "../components/experience/DateSelector";
 import TimeSlotSelector from "../components/experience/TimeSlotSelector";
 import BookingCard from "../components/experience/BookingCard";
+import BackHeader from "../components/common/BackHeader";
 
 const ExperienceDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -86,7 +87,9 @@ const ExperienceDetail = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <>
+    <BackHeader title="Details"/>
+    <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 px-2">
       {/* Left Section */}
       <div className="lg:col-span-2 flex flex-col gap-6">
         <div className="w-full h-[381px] rounded-xl overflow-hidden">
@@ -124,6 +127,7 @@ const ExperienceDetail = () => {
         onConfirm={handleConfirm}
       />
     </div>
+    </>
   );
 };
 
