@@ -1,6 +1,6 @@
 import ExperienceCard from "../components/cards/ExperienceCard";
 import { useExperiences } from "../hooks/useExperiences";
-import Loading from "../components/ui/Loading"
+import Loading from "../components/ui/Loading.tsx"
 
 const Home = () => {
   const { experiences, loading, error } = useExperiences();
